@@ -1,3 +1,5 @@
+import { LucideIcon } from 'lucide-react'
+
 export interface ApiResponse<T> {
 	data: T
 	message: string
@@ -8,4 +10,10 @@ export interface ApiResponse<T> {
 export interface ErrorResponse {
 	message: string
 	statusCode: number
+}
+
+export interface NavItemProps {
+	label: string
+	href: string
+	icon: LucideIcon
 }
