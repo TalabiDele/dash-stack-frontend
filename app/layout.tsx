@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 }
 
 import { ThemeProvider } from '@/shared/lib/theme-provider'
+import { QueryProvider } from '@/shared/api/query-provider'
 
 export default function RootLayout({
 	children,
@@ -30,15 +31,17 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<ThemeProvider
-					attribute='class'
-					defaultTheme='system'
-					enableSystem
-					disableTransitionOnChange
-				>
-					{children}
-					<Toaster position='top-right' richColors closeButton />
-				</ThemeProvider>
+				<QueryProvider>
+					<ThemeProvider
+						attribute='class'
+						defaultTheme='system'
+						enableSystem
+						disableTransitionOnChange
+					>
+						{children}
+						<Toaster position='top-right' richColors closeButton />
+					</ThemeProvider>
+				</QueryProvider>
 			</body>
 		</html>
 	)

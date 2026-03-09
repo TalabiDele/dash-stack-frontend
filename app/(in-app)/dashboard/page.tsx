@@ -1,12 +1,11 @@
-import { Text } from '@/shared/ui/Text/text'
-import React from 'react'
+import Dashboard from '@/features/dashboard/ui/dashboard'
 
-const Dashboard = () => {
+const DashboardPage = () => {
 	return (
 		<div>
-			<Text variant='h1'>Dashboard</Text>
+			<Dashboard />
 		</div>
 	)
 }
 
-export default Dashboard
+export default DashboardPage

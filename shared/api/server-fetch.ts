@@ -25,6 +25,7 @@ export async function serverFetch(endpoint: string, options: RequestInit = {}) {
 	// 4. Handle Unauthorized (Token expired or missing)
 	if (res.status === 401) {
 		// Instantly kick them back to login if NestJS rejects the token
+		cookieStore.delete('token')
 		redirect('/login')
 	}
 
